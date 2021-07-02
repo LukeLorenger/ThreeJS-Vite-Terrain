@@ -36,6 +36,11 @@ const material = new THREE.MeshStandardMaterial({
 const plane = new THREE.Mesh(geometry, material)
 scene.add(plane)
 
+// BG texture
+
+const bgTexture = new THREE.TextureLoader().load('forest.jpg');
+scene.background = bgTexture;
+
 // gui controls
 plane.rotation.x = 175
 gui.add(plane.rotation, 'x').min(0).max(600)
@@ -47,11 +52,19 @@ gui.add(plane.rotation, 'x').min(0).max(600)
 // scene.add(sphere)
 
 // Lights
-const pointLight = new THREE.PointLight('#00b3ff', 2)
+const pointLight = new THREE.PointLight('#dedede', 2)
 pointLight.position.x = 2
 pointLight.position.y = 3
 pointLight.position.z = 4
 scene.add(pointLight)
+
+// Light Helper
+
+// const lightHelper = new THREE.PointLightHelper(pointLight)
+// When adding lightHelper, make sure to add it within scene
+const gridHelper = new THREE.GridHelper(20, 100);
+scene.add(gridHelper) // add lightHelper
+gridHelper.rotation.x = 175
 
 // GUI Light controls
 gui.add(pointLight.position, 'x')
@@ -59,7 +72,7 @@ gui.add(pointLight.position, 'y')
 gui.add(pointLight.position, 'z')
 
 // color
-const col = { color: '#00ff00' }
+const col = { color: '#dedede' }
 gui.addColor(col, 'color').onChange(() => {
     pointLight.color.set(col.color)
 })
@@ -68,14 +81,14 @@ gui.addColor(col, 'color').onChange(() => {
  * Sizes
  */
 const sizes = {
-    width: window.innerWidth * .7,
+    width: window.innerWidth, // * .7,
     height: window.innerHeight
 }
 
 window.addEventListener('resize', () =>
 {
     // Update sizes
-    sizes.width = window.innerWidth * .7
+    sizes.width = window.innerWidth // * .7
     sizes.height = window.innerHeight
 
     // Update camera
