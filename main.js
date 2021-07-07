@@ -64,7 +64,7 @@ scene.add(pointLight)
 // When adding lightHelper, make sure to add it within scene
 const gridHelper = new THREE.GridHelper(20, 100);
 scene.add(gridHelper) // add lightHelper
-gridHelper.rotation.x = 175
+gridHelper.rotation.x = 200
 
 // GUI Light controls
 gui.add(pointLight.position, 'x')

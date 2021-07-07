@@ -30,14 +30,16 @@ body
 }
 
 h1 {
-    font-size: 4rem;
-    font-family: 'Roboto';
+    font-size: 3.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* color: blue; */
+    /* font-family: 'Roboto'; */
 }
 
 p {
-    font-size: 1.3rem;
+    font-size: 2.3rem;
     width: 55%;
-    color: rgb(107, 107, 122)
+    color: rgb(151, 148, 151)
 }
 
 button {
