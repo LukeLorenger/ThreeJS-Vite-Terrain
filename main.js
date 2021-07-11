@@ -37,7 +37,6 @@ const plane = new THREE.Mesh(geometry, material)
 scene.add(plane)
 
 // BG texture
-
 const bgTexture = new THREE.TextureLoader().load('forest.jpg');
 scene.background = bgTexture;
 
